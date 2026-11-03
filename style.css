@@ -1,0 +1,406 @@
+
+/* 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+  background: #111820;
+  color: #f7f5f0;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+em {
+  color: #f4d58d;
+  font-style: normal;
+}
+
+/* 상단 메뉴 */
+.header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.nav {
+  display: flex;
+  gap: 38px;
+}
+
+.nav a {
+  font-size: 14px;
+  transition: color .3s;
+}
+
+.nav a:hover {
+  color: #f4d58d;
+}
+
+.header-button {
+  border: 1px solid rgba(255,255,255,.5);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+/* 메인 히어로 영역 */
+.hero {
+  min-height: 760px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 120px 9%;
+  background:
+    linear-gradient(90deg, rgba(9,18,29,.85), rgba(9,18,29,.15)),
+    linear-gradient(0deg, #111820, transparent 35%),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #f4d58d;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 5.5vw, 86px);
+  line-height: 1.22;
+  letter-spacing: -3px;
+  margin-bottom: 28px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #d8dce0;
+  margin-bottom: 40px;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 55px;
+  background: #f4d58d;
+  color: #17202a;
+  padding: 17px 25px;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: transform .3s, background .3s;
+}
+
+.primary-button:hover {
+  transform: translateY(-5px);
+  background: #ffe6a7;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 45px;
+  left: 9%;
+  right: 9%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #ddd;
+}
+
+/* 공통 섹션 */
+.section {
+  padding: 110px 7%;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.section-heading h2,
+.about h2 {
+  font-size: clamp(30px, 3.5vw, 52px);
+  letter-spacing: -2px;
+}
+
+.section-heading p {
+  color: #aab3bd;
+  margin-top: 12px;
+}
+
+.section-count {
+  color: #9da6ae;
+  letter-spacing: 3px;
+}
+
+/* 여행지 카드 */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.destination-card {
+  height: 430px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #26313b;
+}
+
+.destination-card img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.destination-card:hover img {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+  background: linear-gradient(transparent 35%, rgba(0,0,0,.85));
+}
+
+.card-tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #f4d58d;
+  margin-bottom: 10px;
+}
+
+.card-overlay h3 {
+  font-size: 30px;
+}
+
+.card-overlay p {
+  font-size: 13px;
+  color: #d5d9dd;
+}
+
+.card-arrow {
+  position: absolute;
+  right: 25px;
+  bottom: 28px;
+  font-size: 23px;
+  transition: transform .3s;
+}
+
+.destination-card:hover .card-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* 테마 여행 */
+.themes {
+  background: #19232e;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.theme-item {
+  padding: 40px 28px;
+  border: 1px solid #38434e;
+  border-radius: 16px;
+  transition: background .3s, transform .3s;
+}
+
+.theme-item:hover {
+  background: #293747;
+  transform: translateY(-6px);
+}
+
+.theme-icon {
+  display: block;
+  color: #f4d58d;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.theme-item h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.theme-item p {
+  font-size: 13px;
+  color: #aab3bd;
+}
+
+/* 하단 소개 */
+.about {
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.about h2 {
+  line-height: 1.4;
+}
+
+.about p {
+  color: #aab3bd;
+  margin: 22px 0 32px;
+}
+
+/* 푸터 */
+.footer {
+  padding: 35px 7%;
+  border-top: 1px solid #303b45;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer p,
+.footer a {
+  font-size: 12px;
+  color: #aab3bd;
+}
+
+/* 태블릿 화면 */
+@media (max-width: 1000px) {
+  .destination-grid,
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    gap: 18px;
+  }
+}
+
+/* 모바일 화면 */
+@media (max-width: 600px) {
+  .header {
+    height: 70px;
+    padding: 0 6%;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .nav,
+  .header-button {
+    display: none;
+  }
+
+  .hero {
+    min-height: 650px;
+    height: 90vh;
+    padding: 100px 7%;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-bottom {
+    left: 7%;
+    right: 7%;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .destination-card {
+    height: 270px;
+  }
+
+  .card-overlay {
+    padding: 15px;
+  }
+
+  .card-overlay h3 {
+    font-size: 22px;
+  }
+
+  .card-overlay p {
+    font-size: 11px;
+  }
+
+  .card-arrow {
+    right: 14px;
+    bottom: 16px;
+  }
+
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .theme-item {
+    padding: 25px 18px;
+  }
+
+  .theme-item h3 {
+    font-size: 16px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
