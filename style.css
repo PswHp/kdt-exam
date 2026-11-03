@@ -1,18 +1,23 @@
 
-/* 기본 스타일 초기화 */
+/* =========================
+   1. 기본 설정
+========================= */
+
+/* 모든 요소의 기본 여백 초기화 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 메뉴 클릭 시 부드러운 스크롤 */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
-  background: #111820;
+  background-color: #111820;
   color: #f7f5f0;
   line-height: 1.6;
 }
@@ -27,24 +32,32 @@ img {
   width: 100%;
 }
 
+/* 강조 글자 */
 em {
   color: #f4d58d;
   font-style: normal;
 }
 
-/* 상단 메뉴 */
+
+/* =========================
+   2. 상단 내비게이션
+========================= */
+
 .header {
   position: absolute;
   z-index: 10;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 88px;
+  padding: 0 6%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 6%;
-  border-bottom: 1px solid rgba(255,255,255,.2);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo {
@@ -60,7 +73,7 @@ em {
 
 .nav a {
   font-size: 14px;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 .nav a:hover {
@@ -68,25 +81,53 @@ em {
 }
 
 .header-button {
-  border: 1px solid rgba(255,255,255,.5);
   padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 30px;
   font-size: 13px;
+
+  transition: background 0.3s;
 }
 
-/* 메인 히어로 영역 */
+.header-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================
+   3. 메인 배너
+========================= */
+
 .hero {
+  position: relative;
+
   min-height: 760px;
   height: 100vh;
-  position: relative;
+
   display: flex;
   align-items: center;
+
   padding: 120px 9%;
+
+  /* 어두운 그라데이션과 배경 이미지 */
   background:
-    linear-gradient(90deg, rgba(9,18,29,.85), rgba(9,18,29,.15)),
-    linear-gradient(0deg, #111820, transparent 35%),
-    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90")
-    center/cover no-repeat;
+    linear-gradient(
+      90deg,
+      rgba(9, 18, 29, 0.85),
+      rgba(9, 18, 29, 0.15)
+    ),
+    linear-gradient(
+      0deg,
+      #111820,
+      transparent 35%
+    ),
+    url(
+      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90"
+    );
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -95,36 +136,49 @@ em {
 
 .eyebrow {
   display: block;
+
+  margin-bottom: 22px;
+
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 4px;
+
   color: #f4d58d;
-  margin-bottom: 22px;
 }
 
 .hero h1 {
   font-size: clamp(45px, 5.5vw, 86px);
   line-height: 1.22;
   letter-spacing: -3px;
+
   margin-bottom: 28px;
 }
 
 .hero p {
   font-size: 18px;
   color: #d8dce0;
+
   margin-bottom: 40px;
 }
 
+
+/* 메인 버튼 */
 .primary-button {
   display: inline-flex;
   align-items: center;
   gap: 55px;
+
+  padding: 17px 25px;
+
   background: #f4d58d;
   color: #17202a;
-  padding: 17px 25px;
+
   border-radius: 40px;
   font-weight: 700;
-  transition: transform .3s, background .3s;
+
+  transition:
+    transform 0.3s,
+    background 0.3s;
 }
 
 .primary-button:hover {
@@ -132,27 +186,37 @@ em {
   background: #ffe6a7;
 }
 
+
+/* 배너 하단 텍스트 */
 .hero-bottom {
   position: absolute;
+
   bottom: 45px;
   left: 9%;
   right: 9%;
+
   display: flex;
   justify-content: space-between;
+
   font-size: 11px;
   letter-spacing: 3px;
   color: #ddd;
 }
 
-/* 공통 섹션 */
+
+/* =========================
+   4. 공통 섹션
+========================= */
+
 .section {
   padding: 110px 7%;
 }
 
 .section-heading {
   display: flex;
-  align-items: end;
   justify-content: space-between;
+  align-items: end;
+
   margin-bottom: 42px;
 }
 
@@ -172,7 +236,12 @@ em {
   letter-spacing: 3px;
 }
 
-/* 여행지 카드 */
+
+/* =========================
+   5. 여행지 카드
+========================= */
+
+/* 4열 그리드 레이아웃 */
 .destination-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -180,37 +249,53 @@ em {
 }
 
 .destination-card {
-  height: 430px;
   position: relative;
+
+  height: 430px;
+
   overflow: hidden;
   border-radius: 16px;
-  background: #26313b;
+
+  background-color: #26313b;
 }
 
+/* 카드 이미지 */
 .destination-card img {
+  width: 100%;
   height: 100%;
+
   object-fit: cover;
-  transition: transform .6s;
+
+  transition: transform 0.6s;
 }
 
+/* 마우스를 올리면 이미지 확대 */
 .destination-card:hover img {
   transform: scale(1.1);
 }
 
+/* 카드 이미지 위에 텍스트 표시 */
 .card-overlay {
   position: absolute;
   inset: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
   padding: 25px;
-  background: linear-gradient(transparent 35%, rgba(0,0,0,.85));
+
+  background: linear-gradient(
+    transparent 35%,
+    rgba(0, 0, 0, 0.85)
+  );
 }
 
 .card-tag {
   font-size: 10px;
   letter-spacing: 2px;
   color: #f4d58d;
+
   margin-bottom: 10px;
 }
 
@@ -225,19 +310,26 @@ em {
 
 .card-arrow {
   position: absolute;
+
   right: 25px;
   bottom: 28px;
+
   font-size: 23px;
-  transition: transform .3s;
+
+  transition: transform 0.3s;
 }
 
 .destination-card:hover .card-arrow {
   transform: translate(4px, -4px);
 }
 
-/* 테마 여행 */
+
+/* =========================
+   6. 여행 테마
+========================= */
+
 .themes {
-  background: #19232e;
+  background-color: #19232e;
 }
 
 .theme-grid {
@@ -248,9 +340,13 @@ em {
 
 .theme-item {
   padding: 40px 28px;
+
   border: 1px solid #38434e;
   border-radius: 16px;
-  transition: background .3s, transform .3s;
+
+  transition:
+    background 0.3s,
+    transform 0.3s;
 }
 
 .theme-item:hover {
@@ -260,8 +356,10 @@ em {
 
 .theme-icon {
   display: block;
+
   color: #f4d58d;
   font-size: 34px;
+
   margin-bottom: 30px;
 }
 
@@ -275,9 +373,14 @@ em {
   color: #aab3bd;
 }
 
-/* 하단 소개 */
+
+/* =========================
+   7. 사이트 소개
+========================= */
+
 .about {
   text-align: center;
+
   padding-top: 140px;
   padding-bottom: 140px;
 }
@@ -291,24 +394,35 @@ em {
   margin: 22px 0 32px;
 }
 
-/* 푸터 */
+
+/* =========================
+   8. 푸터
+========================= */
+
 .footer {
-  padding: 35px 7%;
-  border-top: 1px solid #303b45;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 20px;
+  padding: 35px 7%;
+
+  border-top: 1px solid #303b45;
 }
 
 .footer p,
-.footer a {
+.footer a:not(.logo) {
   font-size: 12px;
   color: #aab3bd;
 }
 
-/* 태블릿 화면 */
+
+/* =========================
+   9. 태블릿 반응형
+========================= */
+
 @media (max-width: 1000px) {
+
   .destination-grid,
   .theme-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -317,10 +431,16 @@ em {
   .nav {
     gap: 18px;
   }
+
 }
 
-/* 모바일 화면 */
+
+/* =========================
+   10. 모바일 반응형
+========================= */
+
 @media (max-width: 600px) {
+
   .header {
     height: 70px;
     padding: 0 6%;
@@ -330,6 +450,7 @@ em {
     font-size: 19px;
   }
 
+  /* 모바일에서는 메뉴 숨김 */
   .nav,
   .header-button {
     display: none;
@@ -338,6 +459,7 @@ em {
   .hero {
     min-height: 650px;
     height: 90vh;
+
     padding: 100px 7%;
   }
 
@@ -352,6 +474,7 @@ em {
   .hero-bottom {
     left: 7%;
     right: 7%;
+
     font-size: 9px;
     letter-spacing: 1px;
   }
@@ -360,6 +483,7 @@ em {
     padding: 75px 6%;
   }
 
+  /* 모바일 여행지 카드 2열 */
   .destination-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -386,6 +510,7 @@ em {
     bottom: 16px;
   }
 
+  /* 테마 카드 2열 */
   .theme-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -403,4 +528,25 @@ em {
     flex-direction: column;
     text-align: center;
   }
+
+}
+
+
+/* =========================
+   11. 모션 최소화 설정
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
 }
