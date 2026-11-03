@@ -4,27 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="국내 여행지를 소개하는 Travel Note">
+  <meta name="description" content="Travel Note - 국내 여행지를 소개하는 여행 정보 사이트">
   <title>Travel Note | 여행의 시작</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
 
   <!-- =========================
-       HEADER : 상단 내비게이션
+       1. HEADER : 상단 메뉴
   ========================== -->
   <header class="header">
-    <a href="#" class="logo">✈ Travel Note</a>
+    <a href="#top" class="logo">✈ Travel Note<span>.</span></a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="주요 메뉴">
       <a href="#destinations">여행지</a>
+      <a href="#courses">추천 코스</a>
       <a href="#themes">테마 여행</a>
-      <a href="#about">소개</a>
+      <a href="#guide">여행 가이드</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
-    <a href="#destinations" class="header-button">
-      여행 둘러보기 ↗
+    <a href="#contact-modal" class="header-button">
+      문의하기 ↗
     </a>
   </header>
 
@@ -32,11 +34,11 @@
   <main>
 
     <!-- =========================
-         HERO : 메인 배너
+         2. HERO : 메인 배너
     ========================== -->
     <section class="hero">
-      <div class="hero-content">
 
+      <div class="hero-content">
         <span class="eyebrow">
           DISCOVER YOUR NEXT JOURNEY
         </span>
@@ -51,35 +53,55 @@
           당신의 다음 여행 이야기를 시작해 보세요.
         </p>
 
-        <a href="#destinations" class="primary-button">
-          여행지 탐색하기 <span>↗</span>
-        </a>
+        <div class="hero-actions">
+          <a href="#destinations" class="primary-button">
+            여행지 탐색하기 <span>↗</span>
+          </a>
 
+          <a href="#courses" class="text-button">
+            추천 여행 코스 보기 →
+          </a>
+        </div>
       </div>
 
       <div class="hero-bottom">
         <span>01 / EXPLORE KOREA</span>
         <span>SCROLL TO EXPLORE ↓</span>
       </div>
+
     </section>
 
 
     <!-- =========================
-         DESTINATIONS : 추천 여행지
+         3. INTRO : 사이트 소개
+    ========================== -->
+    <section class="intro section">
+
+      <span class="eyebrow">TRAVEL MADE SIMPLE</span>
+
+      <h2>
+        여행의 시작부터 끝까지,<br>
+        <em>당신의 여정을 위한 작은 가이드.</em>
+      </h2>
+
+      <p>
+        여행지를 고르는 순간부터 일정을 계획하는 순간까지.<br>
+        Travel Note에서 여행의 영감을 발견해 보세요.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         4. DESTINATIONS : 추천 여행지
     ========================== -->
     <section class="destinations section" id="destinations">
 
       <div class="section-heading">
         <div>
-          <span class="eyebrow">
-            CURATED DESTINATIONS
-          </span>
-
+          <span class="eyebrow">CURATED DESTINATIONS</span>
           <h2>지금 떠나기 좋은 <em>여행지</em></h2>
-
-          <p>
-            우리나라 곳곳에 숨겨진 아름다운 풍경을 만나보세요.
-          </p>
+          <p>우리나라 곳곳의 아름다운 풍경을 만나보세요.</p>
         </div>
 
         <span class="section-count">01 — 04</span>
@@ -88,12 +110,11 @@
 
       <div class="destination-grid">
 
-        <!-- 제주도 : 실제 성산일출봉 사진 -->
+        <!-- 제주도 -->
         <article class="destination-card">
-
           <img
             src="https://commons.wikimedia.org/wiki/Special:FilePath/Seongsan%20Ilchulbong%2001.jpg?width=900"
-            alt="제주도 성산일출봉 풍경"
+            alt="제주도 성산일출봉"
             loading="lazy"
           >
 
@@ -101,15 +122,13 @@
             <span class="card-tag">ISLAND · NATURE</span>
             <h3>제주도</h3>
             <p>푸른 바다와 자연이 어우러진 섬</p>
-            <span class="card-arrow">↗</span>
+            <a href="#jeju-info" class="card-link" aria-label="제주도 여행 정보 보기">↗</a>
           </div>
-
         </article>
 
 
         <!-- 부산 -->
         <article class="destination-card">
-
           <img
             src="https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?auto=format&fit=crop&w=900&q=85"
             alt="부산 여행 테마 이미지"
@@ -120,15 +139,13 @@
             <span class="card-tag">OCEAN · CITY</span>
             <h3>부산</h3>
             <p>바다와 도시가 만나는 곳</p>
-            <span class="card-arrow">↗</span>
+            <a href="#busan-info" class="card-link" aria-label="부산 여행 정보 보기">↗</a>
           </div>
-
         </article>
 
 
         <!-- 경주 -->
         <article class="destination-card">
-
           <img
             src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85"
             alt="경주 여행 테마 이미지"
@@ -139,15 +156,13 @@
             <span class="card-tag">HISTORY · CULTURE</span>
             <h3>경주</h3>
             <p>시간을 거슬러 걷는 여행</p>
-            <span class="card-arrow">↗</span>
+            <a href="#gyeongju-info" class="card-link" aria-label="경주 여행 정보 보기">↗</a>
           </div>
-
         </article>
 
 
         <!-- 강릉 -->
         <article class="destination-card">
-
           <img
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
             alt="강릉 여행 테마 해변 이미지"
@@ -158,9 +173,42 @@
             <span class="card-tag">BEACH · RELAX</span>
             <h3>강릉</h3>
             <p>파도 소리와 함께하는 휴식</p>
-            <span class="card-arrow">↗</span>
+            <a href="#gangneung-info" class="card-link" aria-label="강릉 여행 정보 보기">↗</a>
           </div>
+        </article>
 
+      </div>
+
+
+      <!-- 여행지 상세 정보 -->
+      <div class="destination-info">
+
+        <article class="info-card" id="jeju-info">
+          <span class="info-number">01 / JEJU</span>
+          <h3>제주도</h3>
+          <p>성산일출봉 · 협재해수욕장 · 오설록 티뮤지엄</p>
+          <span class="info-tag">추천 일정 · 2박 3일</span>
+        </article>
+
+        <article class="info-card" id="busan-info">
+          <span class="info-number">02 / BUSAN</span>
+          <h3>부산</h3>
+          <p>해운대 · 광안리 · 감천문화마을</p>
+          <span class="info-tag">추천 일정 · 1박 2일</span>
+        </article>
+
+        <article class="info-card" id="gyeongju-info">
+          <span class="info-number">03 / GYEONGJU</span>
+          <h3>경주</h3>
+          <p>불국사 · 대릉원 · 동궁과 월지</p>
+          <span class="info-tag">추천 일정 · 1박 2일</span>
+        </article>
+
+        <article class="info-card" id="gangneung-info">
+          <span class="info-number">04 / GANGNEUNG</span>
+          <h3>강릉</h3>
+          <p>경포해변 · 안목해변 · 오죽헌</p>
+          <span class="info-tag">추천 일정 · 1박 2일</span>
         </article>
 
       </div>
@@ -168,20 +216,111 @@
 
 
     <!-- =========================
-         THEMES : 여행 테마
+         5. COURSES : 추천 여행 코스
+    ========================== -->
+    <section class="courses section" id="courses">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">TRAVEL ITINERARIES</span>
+          <h2>여행이 쉬워지는 <em>추천 코스</em></h2>
+          <p>어디부터 가야 할지 고민된다면 참고해 보세요.</p>
+        </div>
+      </div>
+
+      <div class="course-grid">
+
+        <!-- 부산 코스 -->
+        <article class="course-card">
+          <div class="course-top">
+            <span class="course-label">01 / OCEAN TRIP</span>
+            <span class="course-days">1박 2일</span>
+          </div>
+
+          <h3>부산 바다 여행</h3>
+          <p class="course-desc">
+            부산의 대표적인 바다와 야경을 만나는 여행
+          </p>
+
+          <div class="course-day">
+            <strong>DAY 01</strong>
+            <p>해운대 → 동백섬 → 광안리</p>
+          </div>
+
+          <div class="course-day">
+            <strong>DAY 02</strong>
+            <p>감천문화마을 → 자갈치시장 → 흰여울문화마을</p>
+          </div>
+        </article>
+
+
+        <!-- 경주 코스 -->
+        <article class="course-card">
+          <div class="course-top">
+            <span class="course-label">02 / HISTORY TRIP</span>
+            <span class="course-days">1박 2일</span>
+          </div>
+
+          <h3>경주 역사 여행</h3>
+          <p class="course-desc">
+            오래된 유적과 아름다운 야경을 감상하는 여행
+          </p>
+
+          <div class="course-day">
+            <strong>DAY 01</strong>
+            <p>대릉원 → 첨성대 → 동궁과 월지</p>
+          </div>
+
+          <div class="course-day">
+            <strong>DAY 02</strong>
+            <p>불국사 → 석굴암 → 황리단길</p>
+          </div>
+        </article>
+
+
+        <!-- 강릉 코스 -->
+        <article class="course-card">
+          <div class="course-top">
+            <span class="course-label">03 / HEALING TRIP</span>
+            <span class="course-days">1박 2일</span>
+          </div>
+
+          <h3>강릉 힐링 여행</h3>
+          <p class="course-desc">
+            동해의 푸른 바다와 여유를 즐기는 여행
+          </p>
+
+          <div class="course-day">
+            <strong>DAY 01</strong>
+            <p>경포해변 → 안목해변 → 카페거리</p>
+          </div>
+
+          <div class="course-day">
+            <strong>DAY 02</strong>
+            <p>오죽헌 → 초당순두부마을 → 정동진</p>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="section-note">
+        * 추천 일정은 예시이며 실제 방문 전 이동 시간과 운영 시간을 확인하세요.
+      </p>
+    </section>
+
+
+    <!-- =========================
+         6. THEMES : 테마 여행
     ========================== -->
     <section class="themes section" id="themes">
 
       <div class="section-heading">
         <div>
           <span class="eyebrow">FIND YOUR STYLE</span>
-
           <h2>당신만의 <em>여행 스타일</em></h2>
-
           <p>오늘은 어떤 여행이 끌리나요?</p>
         </div>
       </div>
-
 
       <div class="theme-grid">
 
@@ -189,24 +328,28 @@
           <span class="theme-icon">✳</span>
           <h3>자연 속 힐링</h3>
           <p>숲과 산, 그리고 쉼</p>
+          <span class="theme-place">추천 · 제주도</span>
         </div>
 
         <div class="theme-item">
           <span class="theme-icon">◈</span>
           <h3>바다 여행</h3>
           <p>푸른 수평선을 따라서</p>
+          <span class="theme-place">추천 · 부산 / 강릉</span>
         </div>
 
         <div class="theme-item">
           <span class="theme-icon">⌂</span>
           <h3>역사와 문화</h3>
           <p>오래된 이야기 속으로</p>
+          <span class="theme-place">추천 · 경주</span>
         </div>
 
         <div class="theme-item">
           <span class="theme-icon">✦</span>
           <h3>맛집 탐방</h3>
           <p>여행의 또 다른 즐거움</p>
+          <span class="theme-place">추천 · 부산 / 강릉</span>
         </div>
 
       </div>
@@ -214,13 +357,159 @@
 
 
     <!-- =========================
-         ABOUT : 사이트 소개
+         7. GUIDE : 여행 준비 가이드
+    ========================== -->
+    <section class="guide section" id="guide">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">TRAVEL ESSENTIALS</span>
+          <h2>떠나기 전 <em>체크리스트</em></h2>
+          <p>더 편안한 여행을 위한 준비 가이드</p>
+        </div>
+      </div>
+
+      <div class="guide-grid">
+
+        <article class="guide-card">
+          <span class="guide-number">01</span>
+          <h3>교통편 확인</h3>
+          <p>
+            기차, 버스, 항공편의 운행 시간과
+            예약 여부를 미리 확인하세요.
+          </p>
+          <a href="https://www.letskorail.com/" target="_blank" rel="noopener noreferrer">
+            코레일 바로가기 ↗
+          </a>
+        </article>
+
+        <article class="guide-card">
+          <span class="guide-number">02</span>
+          <h3>숙소 준비</h3>
+          <p>
+            여행 동선에 맞는 숙소를 선택하고
+            체크인 시간을 확인하세요.
+          </p>
+          <a href="#contact-modal">
+            여행 관련 문의 ↗
+          </a>
+        </article>
+
+        <article class="guide-card">
+          <span class="guide-number">03</span>
+          <h3>날씨와 준비물</h3>
+          <p>
+            방문 지역의 날씨를 확인하고
+            계절에 맞는 준비물을 챙겨 보세요.
+          </p>
+          <a href="https://www.weather.go.kr/" target="_blank" rel="noopener noreferrer">
+            기상청 바로가기 ↗
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         8. FAQ : 자주 묻는 질문
+
+         details / summary 태그는
+         JavaScript 없이 펼칠 수 있음
+    ========================== -->
+    <section class="faq section" id="faq">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>자주 묻는 <em>질문</em></h2>
+          <p>여행을 준비하면서 궁금할 수 있는 내용</p>
+        </div>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>
+            <span>Q. Travel Note에서 여행 상품을 예약할 수 있나요?</span>
+            <span class="faq-plus">+</span>
+          </summary>
+
+          <p>
+            Travel Note는 여행 정보 소개를 위한 예시 사이트입니다.
+            실제 여행 상품 예약 기능은 제공하지 않습니다.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Q. 추천 여행 코스는 자유롭게 변경해도 되나요?</span>
+            <span class="faq-plus">+</span>
+          </summary>
+
+          <p>
+            네. 추천 코스는 참고용입니다.
+            개인의 취향과 일정에 따라 자유롭게 변경할 수 있습니다.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Q. 여행지 정보는 실시간으로 업데이트되나요?</span>
+            <span class="faq-plus">+</span>
+          </summary>
+
+          <p>
+            현재 페이지는 HTML과 CSS로 제작된 정적 사이트이므로
+            여행지 정보가 자동으로 업데이트되지는 않습니다.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>Q. 문의하기 기능으로 실제 문의를 보낼 수 있나요?</span>
+            <span class="faq-plus">+</span>
+          </summary>
+
+          <p>
+            아니요. 현재 문의하기는 UI 연습을 위한 예시 기능입니다.
+            입력한 정보는 저장되거나 전송되지 않습니다.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         9. CONTACT BANNER : 문의 유도
+    ========================== -->
+    <section class="contact-banner section" id="contact">
+
+      <span class="eyebrow">HAVE A QUESTION?</span>
+
+      <h2>
+        여행에 대해<br>
+        <em>궁금한 점이 있나요?</em>
+      </h2>
+
+      <p>
+        여행 관련 질문이나 사이트에 대한 의견을 남겨 보세요.
+      </p>
+
+      <a href="#contact-modal" class="primary-button">
+        문의하기 <span>↗</span>
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         10. ABOUT : 하단 소개
     ========================== -->
     <section class="about section" id="about">
 
-      <span class="eyebrow">
-        YOUR JOURNEY STARTS HERE
-      </span>
+      <span class="eyebrow">YOUR JOURNEY STARTS HERE</span>
 
       <h2>
         좋은 여행은<br>
@@ -231,7 +520,7 @@
         Travel Note와 함께 다음 여행을 상상해 보세요.
       </p>
 
-      <a href="#destinations" class="primary-button">
+      <a href="#destinations" class="secondary-button">
         여행지 다시 보기 ↗
       </a>
 
@@ -241,19 +530,186 @@
 
 
   <!-- =========================
-       FOOTER : 하단 정보
+       11. FOOTER : 사이트 하단
   ========================== -->
   <footer class="footer">
 
-    <a href="#" class="logo">✈ Travel Note</a>
+    <a href="#top" class="logo">✈ Travel Note<span>.</span></a>
 
-    <p>
-      © 2026 Travel Note. Made for learning HTML & CSS.
-    </p>
+    <p>© 2026 Travel Note. HTML & CSS Practice Project.</p>
 
-    <a href="#">맨 위로 ↑</a>
+    <div class="footer-links">
+      <a href="#contact-modal">문의하기</a>
+      <a href="#faq">FAQ</a>
+      <a href="#top">맨 위로 ↑</a>
+    </div>
 
   </footer>
+
+
+  <!-- =========================
+       12. CONTACT MODAL : 문의 팝업
+
+       CSS :target을 사용하여 표시
+       서버 및 JavaScript 사용하지 않음
+  ========================== -->
+  <section
+    id="contact-modal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="contact-title"
+  >
+
+    <!-- 팝업 바깥 영역을 클릭하면 닫기 -->
+    <a
+      href="#contact"
+      class="modal-backdrop"
+      aria-label="문의 팝업 닫기"
+    ></a>
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">CONTACT US</span>
+          <h2 id="contact-title">문의하기</h2>
+        </div>
+
+        <a
+          href="#contact"
+          class="modal-close"
+          aria-label="닫기"
+        >×</a>
+      </div>
+
+      <p class="modal-description">
+        궁금한 점이나 의견을 자유롭게 작성해 주세요.
+      </p>
+
+      <!-- 실제 전송하지 않는 예시 폼 -->
+      <form class="contact-form">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="user-name">이름</label>
+            <input
+              type="text"
+              id="user-name"
+              name="name"
+              placeholder="이름을 입력하세요"
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="user-email">이메일</label>
+            <input
+              type="email"
+              id="user-email"
+              name="email"
+              placeholder="example@email.com"
+              autocomplete="email"
+            >
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="inquiry-type">문의 유형</label>
+
+          <select id="inquiry-type" name="type">
+            <option value="">문의 유형 선택</option>
+            <option value="travel">여행지 관련 문의</option>
+            <option value="course">추천 코스 관련 문의</option>
+            <option value="website">사이트 이용 문의</option>
+            <option value="other">기타 문의</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiry-title">문의 제목</label>
+
+          <input
+            type="text"
+            id="inquiry-title"
+            name="title"
+            placeholder="문의 제목을 입력하세요"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="inquiry-content">문의 내용</label>
+
+          <textarea
+            id="inquiry-content"
+            name="message"
+            rows="5"
+            placeholder="문의 내용을 자세히 작성해 주세요."
+          ></textarea>
+        </div>
+
+        <p class="form-notice">
+          * 이 폼은 HTML/CSS 연습용입니다.
+          작성한 내용은 실제로 저장되거나 전송되지 않습니다.
+        </p>
+
+        <!--
+          제출 버튼 대신 링크 사용.
+          클릭하면 CSS 완료 팝업으로 이동.
+          폼 데이터는 전송하지 않음.
+        -->
+        <a href="#contact-success" class="form-submit">
+          문의 제출하기 ↗
+        </a>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       13. SUCCESS MODAL : 제출 완료 예시
+
+       실제 전송 성공이 아닌 데모 화면
+  ========================== -->
+  <section
+    id="contact-success"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="success-title"
+  >
+
+    <a
+      href="#contact"
+      class="modal-backdrop"
+      aria-label="완료 화면 닫기"
+    ></a>
+
+    <div class="modal-box success-box">
+
+      <div class="success-icon">✓</div>
+
+      <span class="eyebrow">DEMO COMPLETED</span>
+
+      <h2 id="success-title">문의하기 예시 완료!</h2>
+
+      <p>
+        문의 폼 화면을 체험했습니다.<br>
+        실제 문의 내용은 전송되거나 저장되지 않았습니다.
+      </p>
+
+      <a href="#contact" class="form-submit">
+        확인
+      </a>
+
+    </div>
+
+  </section>
 
 </body>
 </html>
